@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Modern Web Development - My Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .back-link {
+            color: #3498db;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .article {
+            background: #fff;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .article-category {
+            background: #3498db;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content code {
+            background: #f1f2f6;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+
+        .article-content pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .article-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .article {
+                padding: 2rem;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">My Website</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <article class="article">
+            <div class="article-meta">
+                <span class="article-category">Web Dev</span>
+                <span class="article-date">Aug 12, 2025</span>
+                <span class="read-time">5 min read</span>
+            </div>
+            
+            <h1 class="article-title">Getting Started with Modern Web Development</h1>
+            
+            <div class="article-content">
+                <p>Web development has evolved tremendously over the past few years. With new technologies, frameworks, and best practices emerging constantly, it can be overwhelming for newcomers to know where to start. This guide will walk you through the fundamentals of modern web development and provide a clear path forward.</p>
+
+                <h2>The Foundation: HTML, CSS, and JavaScript</h2>
+                
+                <p>Before diving into complex frameworks and tools, it's crucial to master the core technologies that power the web:</p>
+
+                <h3>HTML5: The Structure</h3>
+                <p>HTML5 provides the semantic structure for web pages. Modern HTML emphasizes accessibility and semantic meaning over visual presentation. Key concepts include:</p>
+                <ul>
+                    <li>Semantic elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;article&gt;</code></li>
+                    <li>Form validation and new input types</li>
+                    <li>Accessibility attributes and ARIA labels</li>
+                    <li>Progressive enhancement principles</li>
+                </ul>
+
+                <h3>CSS3: The Presentation</h3>
+                <p>CSS3 has revolutionized how we style web pages. Modern CSS features include:</p>
+                <ul>
+                    <li>Flexbox and Grid for layout</li>
+                    <li>Custom properties (CSS variables)</li>
+                    <li>Media queries for responsive design</li>
+                    <li>Animations and transitions</li>
+                    <li>Modern pseudo-selectors and functions</li>
+                </ul>
+
+                <p>Here's a simple example of modern CSS using Grid:</p>
+                <pre><code>.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}</code></pre>
+
+                <h3>JavaScript ES6+: The Behavior</h3>
+                <p>Modern JavaScript includes many powerful features that make code more readable and maintainable:</p>
+                <ul>
+                    <li>Arrow functions and destructuring</li>
+                    <li>Promises and async/await for handling asynchronous code</li>
+                    <li>Modules for code organization</li>
+                    <li>Template literals for string interpolation</li>
+                    <li>Classes and modern object-oriented patterns</li>
+                </ul>
+
+                <h2>Essential Tools and Workflow</h2>
+                
+                <p>Modern web development relies on various tools to streamline the development process:</p>
+
+                <h3>Version Control with Git</h3>
+                <p>Git is essential for tracking changes, collaborating with others, and managing different versions of your code. Learn the basics of commits, branches, and merging.</p>
+
+                <h3>Package Managers</h3>
+                <p>Tools like npm or yarn help manage dependencies and automate common tasks. They're essential for modern JavaScript development.</p>
+
+                <h3>Build Tools</h3>
+                <p>Build tools like Vite, Webpack, or Parcel help optimize your code for production, handle asset processing, and provide development servers with hot reloading.</p>
+
+                <h2>Best Practices for Modern Web Development</h2>
+
+                <ol>
+                    <li><strong>Mobile-First Design:</strong> Start designing for mobile devices and progressively enhance for larger screens.</li>
+                    <li><strong>Performance Optimization:</strong> Optimize images, minimize HTTP requests, and use efficient loading strategies.</li>
+                    <li><strong>Accessibility:</strong> Ensure your websites work for users with disabilities by following WCAG guidelines.</li>
+                    <li><strong>SEO Considerations:</strong> Use semantic HTML, proper meta tags, and structured data.</li>
+                    <li><strong>Security:</strong> Implement HTTPS, validate user input, and follow security best practices.</li>
+                </ol>
+
+                <h2>Next Steps</h2>
+                
+                <p>Once you're comfortable with the fundamentals, consider exploring:</p>
+                <ul>
+                    <li>Modern JavaScript frameworks like React, Vue, or Svelte</li>
+                    <li>CSS preprocessors or frameworks like Sass or Tailwind CSS</li>
+                    <li>Backend technologies like Node.js, Python, or PHP</li>
+                    <li>Databases and API development</li>
+                    <li>Cloud platforms and deployment strategies</li>
+                </ul>
+
+                <p>Remember, web development is a journey of continuous learning. Focus on building projects, experimenting with new technologies, and staying curious about emerging trends and best practices.</p>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
