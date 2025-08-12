@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Design Principles for Developers - My Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .back-link {
+            color: #3498db;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .article {
+            background: #fff;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .article-category {
+            background: #e74c3c;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .article {
+                padding: 2rem;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">My Website</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <article class="article">
+            <div class="article-meta">
+                <span class="article-category">Design</span>
+                <span class="article-date">Aug 10, 2025</span>
+                <span class="read-time">7 min read</span>
+            </div>
+            
+            <h1 class="article-title">UI/UX Design Principles for Developers</h1>
+            
+            <div class="article-content">
+                <p>As a developer, understanding UI/UX design principles can dramatically improve the quality of your applications. While you don't need to become a professional designer, grasping these fundamental concepts will help you create more intuitive, accessible, and successful products.</p>
+
+                <h2>Understanding the Difference: UI vs UX</h2>
+                
+                <p><strong>User Interface (UI)</strong> focuses on the visual elements users interact with—buttons, forms, colors, typography, and layout. It's about how things look and feel.</p>
+                
+                <p><strong>User Experience (UX)</strong> encompasses the entire journey a user takes when interacting with your product. It's about how things work and how users feel throughout their interaction.</p>
+
+                <blockquote>
+                    "Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs
+                </blockquote>
+
+                <h2>Core UI Design Principles</h2>
+
+                <h3>1. Visual Hierarchy</h3>
+                <p>Guide users' attention through strategic use of:</p>
+                <ul>
+                    <li><strong>Size:</strong> Larger elements draw more attention</li>
+                    <li><strong>Color:</strong> Bright or contrasting colors stand out</li>
+                    <li><strong>Contrast:</strong> High contrast creates emphasis</li>
+                    <li><strong>Spacing:</strong> White space helps elements breathe and creates focus</li>
+                    <li><strong>Typography:</strong> Different font weights and sizes create hierarchy</li>
+                </ul>
+
+                <h3>2. Consistency</h3>
+                <p>Maintain consistency across your application in:</p>
+                <ul>
+                    <li>Color schemes and branding</li>
+                    <li>Button styles and interactions</li>
+                    <li>Navigation patterns</li>
+                    <li>Typography choices</li>
+                    <li>Spacing and layout grids</li>
+                </ul>
+
+                <h3>3. Accessibility</h3>
+                <p>Design for all users by considering:</p>
+                <ul>
+                    <li><strong>Color contrast:</strong> Ensure text is readable (WCAG AA standard: 4.5:1 ratio)</li>
+                    <li><strong>Font sizes:</strong> Use readable sizes (minimum 16px for body text)</li>
+                    <li><strong>Touch targets:</strong> Make buttons at least 44px × 44px</li>
+                    <li><strong>Alternative text:</strong> Provide alt text for images</li>
+                    <li><strong>Keyboard navigation:</strong> Ensure all interactive elements are keyboard accessible</li>
+                </ul>
+
+                <h2>Essential UX Principles</h2>
+
+                <h3>1. User-Centered Design</h3>
+                <p>Always design with your users in mind:</p>
+                <ul>
+                    <li>Understand your target audience</li>
+                    <li>Consider their goals, needs, and pain points</li>
+                    <li>Test your assumptions with real users</li>
+                    <li>Iterate based on feedback</li>
+                </ul>
+
+                <h3>2. Simplicity and Clarity</h3>
+                <p>Keep your interface simple and focused:</p>
+                <ul>
+                    <li>Remove unnecessary elements</li>
+                    <li>Use clear, descriptive labels</li>
+                    <li>Limit choices to prevent decision paralysis</li>
+                    <li>Progressive disclosure: show information when needed</li>
+                </ul>
+
+                <h3>3. Feedback and Communication</h3>
+                <p>Always keep users informed:</p>
+                <ul>
+                    <li>Provide immediate feedback for user actions</li>
+                    <li>Show loading states for longer processes</li>
+                    <li>Use clear error messages with solutions</li>
+                    <li>Confirm destructive actions</li>
+                </ul>
+
+                <h2>Practical Tips for Developers</h2>
+
+                <h3>Start with Mobile-First Design</h3>
+                <p>Designing for mobile first forces you to prioritize content and functionality, leading to cleaner, more focused designs.</p>
+
+                <h3>Use Design Systems</h3>
+                <p>Implement or create a design system with:</p>
+                <ul>
+                    <li>Color palettes</li>
+                    <li>Typography scales</li>
+                    <li>Spacing guidelines</li>
+                    <li>Component libraries</li>
+                    <li>Icon sets</li>
+                </ul>
+
+                <h3>Learn Basic Typography</h3>
+                <ul>
+                    <li>Limit font families (2-3 maximum)</li>
+                    <li>Use appropriate line heights (1.4-1.6 for body text)</li>
+                    <li>Create clear typographic hierarchy</li>
+                    <li>Ensure sufficient contrast</li>
+                </ul>
+
+                <h3>Master Color Theory Basics</h3>
+                <ul>
+                    <li>Use color purposefully (red for errors, green for success)</li>
+                    <li>Limit your color palette (3-5 main colors)</li>
+                    <li>Consider color blindness (don't rely solely on color for meaning)</li>
+                    <li>Use neutral colors for large areas, bright colors for accents</li>
+                </ul>
+
+                <h2>Common Mistakes to Avoid</h2>
+
+                <ol>
+                    <li><strong>Too much information:</strong> Overwhelming users with too many options or too much content at once</li>
+                    <li><strong>Poor contrast:</strong> Making text hard to read with insufficient color contrast</li>
+                    <li><strong>Inconsistent interactions:</strong> Having buttons that behave differently in different parts of the app</li>
+                    <li><strong>No feedback:</strong> Leaving users wondering if their action was successful</li>
+                    <li><strong>Ignoring mobile users:</strong> Not optimizing for touch interactions and smaller screens</li>
+                </ol>
+
+                <h2>Tools and Resources</h2>
+
+                <p>Useful tools for developers getting into design:</p>
+                <ul>
+                    <li><strong>Figma:</strong> Free design tool with great developer handoff features</li>
+                    <li><strong>Coolors.co:</strong> Color palette generator</li>
+                    <li><strong>WebAIM Contrast Checker:</strong> Test color contrast ratios</li>
+                    <li><strong>Google Fonts:</strong> Free, web-optimized fonts</li>
+                    <li><strong>Unsplash:</strong> High-quality free photos</li>
+                </ul>
+
+                <h2>Testing Your Designs</h2>
+
+                <p>Validate your design decisions through:</p>
+                <ul>
+                    <li>User testing sessions</li>
+                    <li>Analytics and heatmaps</li>
+                    <li>A/B testing for critical features</li>
+                    <li>Accessibility audits</li>
+                    <li>Performance testing</li>
+                </ul>
+
+                <p>Remember, good design is invisible—users should be able to accomplish their goals effortlessly without thinking about the interface. Start small, focus on your users, and continuously iterate based on feedback and data.</p>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

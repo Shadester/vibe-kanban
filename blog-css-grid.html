@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Responsive Layouts with CSS Grid - My Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .back-link {
+            color: #3498db;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .article {
+            background: #fff;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .article-category {
+            background: #9b59b6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content code {
+            background: #f1f2f6;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+
+        .article-content pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .article-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .demo-grid {
+            background: #ecf0f1;
+            border: 2px dashed #bdc3c7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .demo-item {
+            background: #3498db;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .article {
+                padding: 2rem;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">My Website</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <article class="article">
+            <div class="article-meta">
+                <span class="article-category">Tutorial</span>
+                <span class="article-date">Aug 8, 2025</span>
+                <span class="read-time">8 min read</span>
+            </div>
+            
+            <h1 class="article-title">Building Responsive Layouts with CSS Grid</h1>
+            
+            <div class="article-content">
+                <p>CSS Grid has revolutionized how we approach web layouts. Unlike previous layout methods, Grid gives us precise control over both rows and columns, making it perfect for creating responsive designs that work beautifully on any device.</p>
+
+                <h2>Why CSS Grid?</h2>
+                
+                <p>Before CSS Grid, creating complex layouts required hacky solutions involving floats, positioning, or flexbox workarounds. Grid provides a clean, intuitive way to create two-dimensional layouts with just a few lines of CSS.</p>
+
+                <h3>Grid vs. Flexbox</h3>
+                <p>While both are powerful layout tools, they serve different purposes:</p>
+                <ul>
+                    <li><strong>Flexbox:</strong> One-dimensional layout (row or column)</li>
+                    <li><strong>CSS Grid:</strong> Two-dimensional layout (rows and columns)</li>
+                    <li><strong>Best practice:</strong> Use Grid for overall page layout, Flexbox for component-level alignment</li>
+                </ul>
+
+                <h2>Grid Basics</h2>
+
+                <h3>Creating a Grid Container</h3>
+                <p>Start by defining a grid container:</p>
+                <pre><code>.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+}</code></pre>
+
+                <div class="demo-grid">
+                    <div class="demo-item">Item 1</div>
+                    <div class="demo-item">Item 2</div>
+                    <div class="demo-item">Item 3</div>
+                    <div class="demo-item">Item 4</div>
+                    <div class="demo-item">Item 5</div>
+                    <div class="demo-item">Item 6</div>
+                </div>
+
+                <h3>Key Grid Properties</h3>
+                <ul>
+                    <li><code>grid-template-columns</code>: Defines column sizes</li>
+                    <li><code>grid-template-rows</code>: Defines row sizes</li>
+                    <li><code>gap</code>: Sets spacing between grid items</li>
+                    <li><code>grid-template-areas</code>: Creates named grid areas</li>
+                </ul>
+
+                <h2>Responsive Grid Techniques</h2>
+
+                <h3>1. Auto-Fit and Minmax</h3>
+                <p>Create responsive grids that automatically adjust to screen size:</p>
+                <pre><code>.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}</code></pre>
+
+                <p>This creates columns that:</p>
+                <ul>
+                    <li>Are at least 250px wide</li>
+                    <li>Grow to fill available space</li>
+                    <li>Automatically wrap to new rows when needed</li>
+                </ul>
+
+                <h3>2. Grid Template Areas</h3>
+                <p>Define layout areas for better semantic structure:</p>
+                <pre><code>.layout {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar main aside"
+    "footer footer footer";
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.aside { grid-area: aside; }
+.footer { grid-area: footer; }</code></pre>
+
+                <h3>3. Mobile-First Responsive Design</h3>
+                <p>Start with a single-column layout and expand for larger screens:</p>
+                <pre><code>/* Mobile first - single column */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Tablet - two columns */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop - three columns */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}</code></pre>
+
+                <h2>Advanced Grid Techniques</h2>
+
+                <h3>Fractional Units (fr)</h3>
+                <p>The <code>fr</code> unit represents a fraction of available space:</p>
+                <pre><code>/* Creates three columns: 1/4, 1/2, 1/4 of available width */
+grid-template-columns: 1fr 2fr 1fr;</code></pre>
+
+                <h3>Grid Line Placement</h3>
+                <p>Position items precisely using grid lines:</p>
+                <pre><code>.featured-item {
+  grid-column: 1 / 3; /* Span from line 1 to line 3 */
+  grid-row: 1 / 2;
+}
+
+/* Shorthand */
+.featured-item {
+  grid-area: 1 / 1 / 2 / 3; /* row-start / column-start / row-end / column-end */
+}</code></pre>
+
+                <h3>Implicit Grid Behavior</h3>
+                <p>Control how automatically created rows behave:</p>
+                <pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto); /* Minimum 100px height */
+  grid-auto-flow: row; /* Items flow into rows */
+}</code></pre>
+
+                <h2>Real-World Examples</h2>
+
+                <h3>Card Layout</h3>
+                <pre><code>.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}</code></pre>
+
+                <h3>Magazine Layout</h3>
+                <pre><code>.magazine {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 200px);
+  gap: 1rem;
+}
+
+.article-1 { grid-area: 1 / 1 / 3 / 3; }
+.article-2 { grid-area: 1 / 3 / 2 / 5; }
+.article-3 { grid-area: 2 / 3 / 4 / 6; }
+.sidebar { grid-area: 1 / 5 / 4 / 7; }</code></pre>
+
+                <h2>Grid and Accessibility</h2>
+
+                <p>When using CSS Grid, keep accessibility in mind:</p>
+                <ul>
+                    <li><strong>Maintain logical source order:</strong> Screen readers follow HTML order, not visual order</li>
+                    <li><strong>Use semantic HTML:</strong> Grid should enhance structure, not replace it</li>
+                    <li><strong>Test with keyboard navigation:</strong> Ensure focus order makes sense</li>
+                    <li><strong>Provide fallbacks:</strong> Use feature queries for older browsers</li>
+                </ul>
+
+                <h2>Browser Support and Fallbacks</h2>
+
+                <p>CSS Grid has excellent modern browser support, but consider fallbacks for older browsers:</p>
+                <pre><code>/* Flexbox fallback */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  flex: 1 1 300px;
+}
+
+/* Grid enhancement */
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .grid-item {
+    flex: none;
+  }
+}</code></pre>
+
+                <h2>Performance Considerations</h2>
+
+                <ul>
+                    <li><strong>Avoid complex grid calculations:</strong> Simple grids perform better</li>
+                    <li><strong>Use CSS containment:</strong> <code>contain: layout style</code> for better performance</li>
+                    <li><strong>Minimize reflows:</strong> Avoid changing grid structure dynamically</li>
+                    <li><strong>Optimize images:</strong> Use appropriate sizes for grid items</li>
+                </ul>
+
+                <h2>Debugging Grid Layouts</h2>
+
+                <p>Modern browsers provide excellent Grid debugging tools:</p>
+                <ul>
+                    <li><strong>Firefox:</strong> Built-in Grid Inspector</li>
+                    <li><strong>Chrome:</strong> Grid overlay in DevTools</li>
+                    <li><strong>CSS:</strong> Use <code>grid-template-areas</code> for better visualization</li>
+                </ul>
+
+                <p>CSS Grid is a powerful tool that simplifies responsive design. Start with simple layouts and gradually explore more advanced features. The key is understanding the grid container and item relationship, then building from there.</p>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
