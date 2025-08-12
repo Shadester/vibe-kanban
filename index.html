@@ -109,18 +109,19 @@
         .blog-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
             position: relative;
         }
 
-        .blog-image::after {
-            content: '📝';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
-            opacity: 0.7;
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
         }
 
         .blog-content {
@@ -260,7 +261,9 @@
 
                 <div class="blog-grid">
                     <article class="blog-card">
-                        <div class="blog-image"></div>
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=200&fit=crop&auto=format" alt="Web Development Code on Screen" />
+                        </div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span class="blog-category">Web Dev</span>
@@ -276,7 +279,9 @@
                     </article>
 
                     <article class="blog-card">
-                        <div class="blog-image"></div>
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=200&fit=crop&auto=format" alt="UI/UX Design Wireframes and Tools" />
+                        </div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span class="blog-category">Design</span>
@@ -292,7 +297,9 @@
                     </article>
 
                     <article class="blog-card">
-                        <div class="blog-image"></div>
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=200&fit=crop&auto=format" alt="CSS Grid Layout Development" />
+                        </div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span class="blog-category">Tutorial</span>
@@ -308,7 +315,9 @@
                     </article>
 
                     <article class="blog-card">
-                        <div class="blog-image"></div>
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=200&fit=crop&auto=format" alt="JavaScript Code and Development" />
+                        </div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span class="blog-category">JavaScript</span>
@@ -324,7 +333,9 @@
                     </article>
 
                     <article class="blog-card">
-                        <div class="blog-image"></div>
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop&auto=format" alt="Website Performance Analytics" />
+                        </div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span class="blog-category">Performance</span>
@@ -340,7 +351,9 @@
                     </article>
 
                     <article class="blog-card">
-                        <div class="blog-image"></div>
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=200&fit=crop&auto=format" alt="Developer Tools and Code Editor" />
+                        </div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span class="blog-category">Tools</span>
